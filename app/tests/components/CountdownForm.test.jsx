@@ -2,7 +2,7 @@ import expect from 'expect';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Testutils from 'react-addons-test-utils';
-import $ from 'jQuery';
+import $ from 'jquery/dist/jquery';
 import CountdownForm from '../../components/CountdownForm';
 
 describe('CountdownForm', () => {
