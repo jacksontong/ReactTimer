@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import expect from 'expect';
-import $ from 'jQuery';
+var $ = require('jQuery');
 import TestUtils from 'react-addons-test-utils';
 import Clock from '../../components/Clock';
 
