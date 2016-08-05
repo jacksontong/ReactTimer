@@ -1,1 +1,1 @@
-React Timer Application
+#React Timer Application [![Build Status](https://travis-ci.org/tongtoanbs/ReactTimer.svg?branch=master)](https://travis-ci.org/tongtoanbs/ReactTimer)

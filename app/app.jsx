@@ -6,11 +6,11 @@ import Timer from './components/Timer';
 import Countdown from './components/Countdown';
 
 // Load foundation
-import 'style!css!foundation-sites/dist/foundation.min.css';
+require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
 // App css
-import 'style!css!sass!applicationStyles';
+require('style!css!sass!applicationStyles');
 
 ReactDOM.render(
   <Router history={hashHistory}>
