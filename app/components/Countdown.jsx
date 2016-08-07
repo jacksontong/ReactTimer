@@ -30,6 +30,13 @@ const Countdown = React.createClass({
     this.timer = setInterval(() => {
       const newCount = this.state.count - 1;
       this.setState({count: newCount > 0 ? newCount : 0});
+
+      if (newCount <= 0) {
+        clearInterval(this.timer);
+        this.setState({
+          countdownStatus: 'stopped'
+        });
+      }
     }, 1000);
   },
   clearTimer() {
