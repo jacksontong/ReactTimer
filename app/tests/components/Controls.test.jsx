@@ -11,8 +11,13 @@ describe('Controls', () => {
   });
 
   describe('render', () => {
+    let onStatusChange;
+    beforeEach(() => {
+      onStatusChange = expect.createSpy();
+    });
+
     it('should render pause when started', () => {
-      const controls = TestUtils.renderIntoDocument(<Controls countdownStatus="started"/>);
+      const controls = TestUtils.renderIntoDocument(<Controls onStatusChange={onStatusChange} countdownStatus="started"/>);
       const $el = $(ReactDOM.findDOMNode(controls));
       const $pauseButton = $el.find('button:contains(Pause)');
 
@@ -20,7 +25,7 @@ describe('Controls', () => {
     });
 
     it('should render start when paused', () => {
-      const controls = TestUtils.renderIntoDocument(<Controls countdownStatus="paused"/>);
+      const controls = TestUtils.renderIntoDocument(<Controls onStatusChange={onStatusChange} countdownStatus="paused"/>);
       const $el = $(ReactDOM.findDOMNode(controls));
       const $startButton = $el.find('button:contains(Start)');
 
