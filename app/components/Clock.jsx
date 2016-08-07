@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Clock = React.createClass({
-  propTyps: {
+  propTypes: {
     totalSeconds: React.PropTypes.number
   },
   getDefaultProps() {

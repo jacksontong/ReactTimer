@@ -16,7 +16,7 @@ describe('Countdown', () => {
       countdown = Testutils.renderIntoDocument(<Countdown/>);
     });
     it('should set state to started and countdown', (done) => {
-      countdown.handleSetCoundDown(10);
+      countdown.handleSetCountDown(10);
 
       expect(countdown.state.count).toBe(10);
       expect(countdown.state.countdownStatus).toBe('started');
@@ -28,7 +28,7 @@ describe('Countdown', () => {
     });
 
     it('should never set count less than zero', (done) => {
-      countdown.handleSetCoundDown(1);
+      countdown.handleSetCountDown(1);
 
       setTimeout(() => {
         expect(countdown.state.count).toBe(0);
@@ -37,7 +37,7 @@ describe('Countdown', () => {
     });
 
     it('should pause countdown on paused status', (done) => {
-      countdown.handleSetCoundDown(3);
+      countdown.handleSetCountDown(3);
       countdown.handleStatusChange('paused');
 
       setTimeout(() => {
@@ -48,7 +48,7 @@ describe('Countdown', () => {
     });
 
     it('should stop countdown on stopped status', (done) => {
-      countdown.handleSetCoundDown(3);
+      countdown.handleSetCountDown(3);
       countdown.handleStatusChange('stopped');
 
       setTimeout(() => {
