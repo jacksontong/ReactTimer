@@ -13,17 +13,15 @@ describe('CountdownForm', () => {
   describe('onSetCountDown', () => {
     let spy;
     let countdownForm;
-    let $el;
     beforeEach(() => {
       spy = expect.createSpy();
       countdownForm = Testutils.renderIntoDocument(<CountdownForm onSetCountdown={spy}/>);
-      $el = $(ReactDOM.findDOMNode(countdownForm));
     });
 
     it('should call if valid seconds entered', () => {
       //set input and submit form
       countdownForm.refs.seconds.value = '109';
-      Testutils.Simulate.submit($el.find('form')[0]);
+      Testutils.Simulate.submit(countdownForm.refs.form);
 
       expect(spy).toHaveBeenCalledWith(109);
     });
@@ -31,7 +29,7 @@ describe('CountdownForm', () => {
     it('should not call if invalid seconds entered', () => {
       //set input and submit form
       countdownForm.refs.seconds.value = 'asdfasdf';
-      Testutils.Simulate.submit($el.find('form')[0]);
+      Testutils.Simulate.submit(countdownForm.refs.form);
 
       expect(spy).toNotHaveBeenCalled();
     });
